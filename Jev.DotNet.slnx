@@ -3,9 +3,9 @@
     <Project Path="samples/QuickStart/QuickStart.csproj" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/JevSharp/JevSharp.csproj" />
+    <Project Path="src/Jev.DotNet/Jev.DotNet.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/JevSharp.Tests/JevSharp.Tests.csproj" />
+    <Project Path="tests/Jev.DotNet.Tests/Jev.DotNet.Tests.csproj" />
   </Folder>
 </Solution>

@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace JevSharp;
+namespace Jev.DotNet;
 
 /// <summary>
 /// A typed question for Jev. Create one with <see cref="Noul"/>, <see cref="Choice(object?, string[])"/>,

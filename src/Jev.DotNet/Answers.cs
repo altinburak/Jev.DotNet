@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Text.Json;
 
-namespace JevSharp;
+namespace Jev.DotNet;
 
 /// <summary>An answer to one question. Cast or use the typed accessors on <see cref="SystemOneResponse"/>.</summary>
 public abstract record Answer

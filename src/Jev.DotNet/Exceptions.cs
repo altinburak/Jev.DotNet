@@ -2,7 +2,7 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Text.Json;
 
-namespace JevSharp;
+namespace Jev.DotNet;
 
 /// <summary>Base class for errors raised by this SDK, including invalid configuration or questions.</summary>
 public class JevException : Exception

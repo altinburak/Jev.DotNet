@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JevSharp.Tests;
+namespace Jev.DotNet.Tests;
 
 public class JevClientTests
 {

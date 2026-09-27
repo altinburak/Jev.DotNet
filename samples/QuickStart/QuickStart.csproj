@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\JevSharp\JevSharp.csproj" />
+    <ProjectReference Include="..\..\src\Jev.DotNet\Jev.DotNet.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

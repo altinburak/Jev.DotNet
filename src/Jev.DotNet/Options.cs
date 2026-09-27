@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace JevSharp;
+namespace Jev.DotNet;
 
 /// <summary>
 /// Client configuration. Unset values fall back to environment variables, then SDK defaults:

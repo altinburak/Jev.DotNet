@@ -1,4 +1,4 @@
-namespace JevSharp;
+namespace Jev.DotNet;
 
 /// <summary>A request to evaluate <see cref="State"/> against a set of <see cref="Questions"/>.</summary>
 public sealed class SystemOneRequest

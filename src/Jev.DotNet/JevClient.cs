@@ -6,7 +6,7 @@ using System.Text.Json.Nodes;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
-namespace JevSharp;
+namespace Jev.DotNet;
 
 /// <summary>Client for TypeSafe's System One API (Jev).</summary>
 public interface IJevClient
@@ -297,7 +297,7 @@ public sealed class JevClient : IJevClient, IDisposable
 
         message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
         message.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        message.Headers.UserAgent.Add(new ProductInfoHeaderValue("JevSharp", SdkVersion));
+        message.Headers.UserAgent.Add(new ProductInfoHeaderValue("Jev.DotNet", SdkVersion));
         if (attempt > 0) message.Headers.Add("X-TypeSafe-Retry-Count", attempt.ToString());
         if (body is not null) message.Content = new StringContent(body, Encoding.UTF8, "application/json");
         return message;
@@ -345,7 +345,7 @@ public sealed class JevClient : IJevClient, IDisposable
             {
                 var answer = Answer.Parse(p.Value);
                 if (answer is UnknownAnswer)
-                    _logger.LogWarning("Answer \"{Id}\" has unrecognized type \"{Type}\"; read it from Answer.Raw or upgrade JevSharp.",
+                    _logger.LogWarning("Answer \"{Id}\" has unrecognized type \"{Type}\"; read it from Answer.Raw or upgrade Jev.DotNet.",
                         p.Name, answer.Type);
                 answers[p.Name] = answer;
             }

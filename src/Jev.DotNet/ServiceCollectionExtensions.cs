@@ -1,4 +1,4 @@
-using JevSharp;
+using Jev.DotNet;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 

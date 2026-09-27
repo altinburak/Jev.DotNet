@@ -1,9 +1,9 @@
-# JevSharp
+# Jev.DotNet
 
 An unofficial .NET client for [TypeSafe](https://typesafe.ai)'s **Jev** model.
 
 Jev is a System One model. You give it state (text or JSON) and typed questions, and it
-returns probabilities instead of generated text. JevSharp wraps the
+returns probabilities instead of generated text. Jev.DotNet wraps the
 [HTTP API](https://docs.typesafe.ai/api) with typed questions and answers, retries,
 timeouts, logging, and `IHttpClientFactory` / DI support.
 
@@ -12,7 +12,7 @@ timeouts, logging, and `IHttpClientFactory` / DI support.
 ## Install
 
 ```sh
-dotnet add package JevSharp
+dotnet add package Jev.DotNet
 ```
 
 Targets .NET 8 and later. Create an API key at [console.typesafe.ai](https://console.typesafe.ai/)
@@ -21,7 +21,7 @@ and set `TYPESAFE_API_KEY`.
 ## Quickstart
 
 ```csharp
-using JevSharp;
+using Jev.DotNet;
 
 using var client = new JevClient(); // reads TYPESAFE_API_KEY
 
@@ -142,8 +142,8 @@ redacted, and bodies, which are **not** redacted.
 
 ```sh
 dotnet test
-dotnet pack src/JevSharp -c Release -o artifacts
-dotnet nuget push artifacts/JevSharp.*.nupkg --api-key <NUGET_KEY> --source https://api.nuget.org/v3/index.json
+dotnet pack src/Jev.DotNet -c Release -o artifacts
+dotnet nuget push artifacts/Jev.DotNet.*.nupkg --api-key <NUGET_KEY> --source https://api.nuget.org/v3/index.json
 ```
 
 To learn how to design good questions, see the [TypeSafe docs](https://docs.typesafe.ai/),

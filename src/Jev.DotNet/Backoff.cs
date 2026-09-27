@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Net.Http.Headers;
 
-namespace JevSharp;
+namespace Jev.DotNet;
 
 internal static class Backoff
 {

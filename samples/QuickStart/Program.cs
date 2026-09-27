@@ -1,6 +1,6 @@
 // Triage a support ticket with one Jev request: set TYPESAFE_API_KEY, then `dotnet run`.
 using System.ComponentModel;
-using JevSharp;
+using Jev.DotNet;
 
 using var client = new JevClient();
 

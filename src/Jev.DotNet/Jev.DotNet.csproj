@@ -6,15 +6,19 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <RootNamespace>JevSharp</RootNamespace>
+    <RootNamespace>Jev.DotNet</RootNamespace>
 
-    <PackageId>JevSharp</PackageId>
+    <PackageId>Jev.DotNet</PackageId>
     <Version>0.1.0</Version>
     <Authors>Burak Altin</Authors>
     <Description>Unofficial .NET client for TypeSafe's Jev System One model: ask Noul, Choice, and Score questions about text or structured state and get typed probabilities back. Includes retries, timeouts, logging, and dependency-injection support.</Description>
     <PackageTags>typesafe;jev;ai;llm;classification;system-one;sdk</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <!-- Symbols (.snupkg) so users can step into the SDK while debugging. -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="JevSharp.Tests" />
+    <InternalsVisibleTo Include="Jev.DotNet.Tests" />
   </ItemGroup>
 
 </Project>
