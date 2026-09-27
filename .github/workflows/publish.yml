@@ -1,0 +1,44 @@
+name: Publish to NuGet
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  id-token: write   # required for NuGet Trusted Publishing (OIDC)
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Check tag matches package version
+        run: |
+          version=$(dotnet msbuild src/Jev.DotNet/Jev.DotNet.csproj -getProperty:Version)
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match csproj <Version> $version"
+            exit 1
+          fi
+
+      - name: Test
+        run: dotnet test Jev.DotNet.slnx -c Release
+
+      - name: Pack
+        run: dotnet pack src/Jev.DotNet/Jev.DotNet.csproj -c Release -o artifacts
+
+      - name: NuGet login (Trusted Publishing)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: burakdownunder
+
+      - name: Push
+        run: dotnet nuget push "artifacts/*.nupkg" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
