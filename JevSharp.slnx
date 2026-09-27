@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/samples/">
+    <Project Path="samples/QuickStart/QuickStart.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/JevSharp/JevSharp.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/JevSharp.Tests/JevSharp.Tests.csproj" />
+  </Folder>
+</Solution>
