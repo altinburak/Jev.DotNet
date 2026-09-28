@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest an API or behavior Jev.DotNet should support.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What are you trying to build, and where does the current API get in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API
+      description: What you'd like the code to look like. A sketch is fine.
+      render: csharp
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Current workaround
+      description: How you're handling it today, if at all (for example `ExtraBody` or `UnknownAnswer.Raw`).

@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in Jev.DotNet doesn't work as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. If the problem is with the Jev model's answers rather than this client,
+        TypeSafe's docs and support are the better place for it.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you expected, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal repro
+      description: The smallest code that shows the problem. Remove your API key.
+      render: csharp
+    validations:
+      required: true
+  - type: textarea
+    id: exception
+    attributes:
+      label: Exception or log output
+      description: Include the stack trace and `RequestId` if a `JevApiException` was thrown. Debug logs include request bodies, so check them before pasting.
+      render: text
+  - type: input
+    id: package-version
+    attributes:
+      label: Jev.DotNet version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: .NET version and OS
+      placeholder: .NET 8.0.x on Windows 11
+    validations:
+      required: true

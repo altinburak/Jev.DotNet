@@ -1,5 +1,11 @@
 # Jev.DotNet
 
+[![NuGet](https://img.shields.io/nuget/v/Jev.DotNet.svg)](https://www.nuget.org/packages/Jev.DotNet)
+[![Downloads](https://img.shields.io/nuget/dt/Jev.DotNet.svg)](https://www.nuget.org/packages/Jev.DotNet)
+[![CI](https://github.com/altinburak/Jev.DotNet/actions/workflows/ci.yml/badge.svg)](https://github.com/altinburak/Jev.DotNet/actions/workflows/ci.yml)
+[![.NET 8+](https://img.shields.io/badge/.NET-8%2B-512BD4.svg)](https://dotnet.microsoft.com/download)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/altinburak/Jev.DotNet/blob/main/LICENSE)
+
 An unofficial .NET client for [TypeSafe](https://typesafe.ai)'s **Jev** model.
 
 Jev is a System One model. You give it state (text or JSON) and typed questions, and it
@@ -149,3 +155,8 @@ dotnet nuget push artifacts/Jev.DotNet.*.nupkg --api-key <NUGET_KEY> --source ht
 To learn how to design good questions, see the [TypeSafe docs](https://docs.typesafe.ai/),
 starting with [How to build with System One](https://docs.typesafe.ai/concepts/how-to-build-with-system-one)
 and [Confidence](https://docs.typesafe.ai/confidence).
+
+## Feedback
+
+Found a bug or missing feature? [Open an issue](https://github.com/altinburak/Jev.DotNet/issues/new/choose).
+If Jev.DotNet saves you time, a ⭐ on the repo helps other .NET developers find it.
