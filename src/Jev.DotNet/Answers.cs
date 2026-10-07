@@ -81,7 +81,7 @@ public sealed record ChoiceAnswer : Answer
     /// <summary>Every option mapped to its probability; values sum to 1.</summary>
     public required IReadOnlyDictionary<string, double> Probabilities { get; init; }
 
-    /// <summary>The chosen option as a member of <typeparamref name="TEnum"/> (see <see cref="Question.Choice{TEnum}"/>).</summary>
+    /// <summary>The chosen option as a member of <typeparamref name="TEnum"/> (see <see cref="Question.Choice{TEnum}(object?)"/>).</summary>
     /// <exception cref="JevException">The chosen option is not a member of <typeparamref name="TEnum"/>.</exception>
     public TEnum As<TEnum>() where TEnum : struct, Enum =>
         Enum.TryParse<TEnum>(Choice, ignoreCase: false, out var value) && Enum.IsDefined(value)
@@ -91,7 +91,7 @@ public sealed record ChoiceAnswer : Answer
     /// <summary>The probability of <paramref name="option"/>, or 0 when it is not present.</summary>
     public double ProbabilityOf(string option) => Probabilities.TryGetValue(option, out var p) ? p : 0;
 
-    /// <summary>The probability of an enum option (see <see cref="Question.Choice{TEnum}"/>).</summary>
+    /// <summary>The probability of an enum option (see <see cref="Question.Choice{TEnum}(object?)"/>).</summary>
     public double ProbabilityOf<TEnum>(TEnum option) where TEnum : struct, Enum => ProbabilityOf(option.ToString());
 }
 

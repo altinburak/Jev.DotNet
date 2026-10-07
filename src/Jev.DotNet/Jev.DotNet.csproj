@@ -9,7 +9,7 @@
     <RootNamespace>Jev.DotNet</RootNamespace>
 
     <PackageId>Jev.DotNet</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>Burak Altin</Authors>
     <Description>Unofficial .NET client for TypeSafe's Jev System One model: ask Noul, Choice, and Score questions about text or structured state and get typed probabilities back. Includes retries, timeouts, logging, and dependency-injection support.</Description>
     <PackageTags>typesafe;jev;ai;llm;classification;system-one;sdk</PackageTags>

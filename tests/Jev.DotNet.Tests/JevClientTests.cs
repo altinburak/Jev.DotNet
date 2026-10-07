@@ -124,6 +124,18 @@ public class JevClientTests
     }
 
     [Fact]
+    public void Dictionary_choice_accepts_any_description_type()
+    {
+        var fromObject = Question.Choice("?", new Dictionary<string, object> { ["a"] = "A", ["b"] = new { x = 1 } });
+        var fromString = Question.Choice("?", new Dictionary<string, string> { ["a"] = "A" });
+        var fromNullable = Question.Choice("?", new Dictionary<string, object?> { ["a"] = null });
+
+        Assert.Equal(["a", "b"], fromObject.Criteria.Keys);
+        Assert.Equal("A", fromString.Criteria["a"]);
+        Assert.Null(fromNullable.Criteria["a"]);
+    }
+
+    [Fact]
     public async Task Retries_rate_limits_then_succeeds()
     {
         var (client, handler) = Create(null,

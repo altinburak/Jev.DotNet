@@ -34,8 +34,12 @@ public abstract record Question
         new(instructions, options.ToDictionary(o => o, _ => (object?)null));
 
     /// <summary>Create a question that picks one option; each option maps to a description (or <c>null</c>).</summary>
-    public static ChoiceQuestion Choice(object? instructions, IReadOnlyDictionary<string, object?> criteria) =>
-        new(instructions, criteria);
+    /// <remarks>
+    /// Generic so any dictionary works without nullability warnings, e.g.
+    /// <c>Dictionary&lt;string, string&gt;</c>, <c>Dictionary&lt;string, object&gt;</c>, or <c>Dictionary&lt;string, object?&gt;</c>.
+    /// </remarks>
+    public static ChoiceQuestion Choice<TDescription>(object? instructions, IReadOnlyDictionary<string, TDescription> criteria) =>
+        new(instructions, criteria.ToDictionary(c => c.Key, c => (object?)c.Value, StringComparer.Ordinal));
 
     /// <summary>
     /// Create a choice question whose options are the members of <typeparamref name="TEnum"/>.
